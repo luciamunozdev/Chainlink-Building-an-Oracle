@@ -1,0 +1,27 @@
+{
+  "name": "9.-how-to-build-an-oracle---part-2",
+  "version": "1.0.0",
+  "description": "This lesson picks up where we left off last time, and we're going to look at how to:",
+  "main": "Client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:oracle": "cd oracle && npx truffle deploy --network extdev --reset -all && cd ..",
+    "deploy:caller": "cd caller && npx truffle deploy --network extdev --reset -all && cd ..",
+    "deploy:all": "npm run deploy:oracle && npm run deploy:caller",
+    "gen:rinkeby-key": "node scripts/gen-eth-key.js rinkeby",
+    "migrate:rinkeby": "cd ethereum && npx truffle deploy --network rinkeby"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bn.js": "^5.2.1",
+    "ethereumjs-wallet": "^0.6.2",
+    "loom-js": "^1.80.0",
+    "loom-truffle-provider": "^0.16.0",
+    "openzeppelin-solidity": "^4.6.0",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-privatekey-provider": "^1.5.0"
+  }
+}
